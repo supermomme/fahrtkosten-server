@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "a3c613ec12116466ca6df5cccddd88b30594caba10f6f6322e7190ba8177e9027f4bc7b0223bac4a3eaae0d7fc501221c58276f2b56a3c3460a872e67c70b32f29c9260671f0ee2d25360290ab95c18ec4612725c20f15a87ef161546d7e58272ef5206ea4efcdd4a9501a4c36589fdc0ba325a9414e12a2f290fcdcf4dd1a22c186dd6859eafb09c2d5b13a9f917c0563aefe51fcf4c40d9eca7a48fb1ba43e4eecae83b7656acc29fec77ffc384d7d3c08039f35c7d453659b5c3d08dc8b1b098ed350284328de9a371c213c142da5edbfafdc514af481f7f93ce35b878cafa92f96918e66156cb82493e7fca323e12ca9dac55113c2c8924f953a94883481",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "service": "users",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/fahrtkosten_server"
+}
